@@ -1,0 +1,15 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nodejs
+    container_name: nodejs
+    env_file: .env
+    environment:
+      NODE_ENV: development
+    # restart: always
+    ports:
+      - '3000:3000'
+    command: 'node server.js'
